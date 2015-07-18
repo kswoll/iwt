@@ -1,4 +1,4 @@
-# IOs Widgeting Toolkit
+# iOS Widgeting Toolkit
 
 There are a variety of ways to layout a UI in iOS in Xamarin.iOS.  You can use Interface Builder.  You can generate the code on the fly in conjunction with auto-layout.  But I've always been partial to code-based toolkits that are container-based.  The two main precursors that influenced me were Java Swing and Google's GWT.
 
