@@ -31,7 +31,6 @@ namespace Iwt
     /// 
     /// These are similar to TopLeft, Left, and Bottom respectively, but the width component is filled in by the available
     /// space.
-    /// 
     /// </summary>
     public class AlignmentPanel : Panel
     {
