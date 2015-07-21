@@ -10,6 +10,29 @@ namespace Iwt
         TopLeftFill, LeftFill, BottomLeftFill
     }
 
+    /// <summary>
+    /// A panel that aligns its *one* child in a particular orientation.  The basic directions are:
+    /// 
+    /// TopLeft
+    /// Top
+    /// TopRight
+    /// Left
+    /// Center
+    /// Right
+    /// BottomLeft
+    /// Bottom
+    /// BottomRight
+    /// 
+    /// The extended directions are:
+    /// 
+    /// TopLeftFill
+    /// LeftFill
+    /// BottomLeftFill
+    /// 
+    /// These are similar to TopLeft, Left, and Bottom respectively, but the width component is filled in by the available
+    /// space.
+    /// 
+    /// </summary>
     public class AlignmentPanel : Panel
     {
         public Alignment Alignment { get; private set; }
