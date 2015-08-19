@@ -68,7 +68,10 @@ namespace Iwt
             {
                 return bottom == null || bottom.Hidden ? null : bottom;
             }
-            set { bottom = value; }
+            set 
+            { 
+                bottom = value; 
+            }
         }
 
         private new UIView Center
