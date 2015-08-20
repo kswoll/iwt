@@ -29,10 +29,18 @@ namespace Iwt
             }
         }
 
+        public override void WillRemoveSubview(UIView uiview)
+        {
+            base.WillRemoveSubview(uiview);
+        }
+
         public void Replace(UIView newView)
         {
-            isAnimating = true;
             var view = Subviews[0];
+            if (view == newView)
+                return;
+
+            isAnimating = true;
             var frame = view.Frame;
             AddSubview(newView);
             newView.Frame = new CGRect(frame.Width, frame.Top, frame.Width, frame.Height);
