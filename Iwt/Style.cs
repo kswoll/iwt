@@ -11,7 +11,7 @@ namespace Iwt
 
         public static void ApplyStyles(IStylableControl control, Style[] styles)
         {
-            foreach (var style in styles.Concat(DefaultStyles.Default.Reverse()).Reverse())
+            foreach (var style in styles.Concat(DefaultStyles.Default).Reverse())
             {
                 style.Apply(control);
             }

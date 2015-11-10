@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Iwt
 {
     public static class DefaultStyles
     {
-        public static readonly Style[] Default = new Style[0];
+        public static readonly List<Style> Default = new List<Style>();
     }
 }
 
