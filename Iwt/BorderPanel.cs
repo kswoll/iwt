@@ -156,7 +156,7 @@ namespace Iwt
 
 		protected override void LayoutPanel(CGRect clientFrame)
 		{
-			var sizes = CalculateSizes();
+            var sizes = CalculateSizes(new SizeF((float)clientFrame.Width, (float)clientFrame.Height));
 
 			nfloat height = clientFrame.Height;
 			nfloat width = clientFrame.Width;
@@ -212,6 +212,7 @@ namespace Iwt
 			if (center != null)
 			{
                 center.Frame = new CGRect(centerLeft, centerTop, width, height);
+//                center.SetNeedsLayout();
 			}
             if (SeparatorColor != UIColor.Clear)
             {
@@ -256,7 +257,7 @@ namespace Iwt
 
         protected override CGSize CalculatePreferredSize(CGSize availableSpace)
         {
-			var sizes = CalculateSizes();
+            var sizes = CalculateSizes(new SizeF((float)availableSpace.Width, (float)availableSpace.Height));
 
             return new CGSize(
                 (nfloat)Max(sizes.NorthSize.Width, sizes.SouthSize.Width, sizes.WestSize.Width + sizes.CenterSize.Width + sizes.EastSize.Width + sizes.LeftSeparatorSize + sizes.RightSeparatorSize),
@@ -275,10 +276,8 @@ namespace Iwt
 			return maxValue;
 		}
 
-		private Sizes CalculateSizes() 
+		private Sizes CalculateSizes(SizeF maxSize) 
 		{
-			var maxSize = new SizeF(float.MaxValue, float.MaxValue);
-
             var top = Top;
             var left = Left;
             var right = Right;

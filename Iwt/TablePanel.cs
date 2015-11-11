@@ -77,7 +77,16 @@ namespace Iwt
             for (var i = 0; i < rows.Count; i++)
             {
                 var row = rows[i];
-                var maxHeight = row.Select((x, index) => (nint)x.SizeThatFits(new CGSize(columnWidths[index], nfloat.MaxValue)).Height).Max();
+                int maxHeight = 0;
+                for (var j = 0; j < row.Length; j++) 
+                {
+                    var cell = row[j];
+                    var availableCellSize = new CGSize(columnWidths[j], nfloat.MaxValue);
+                    var cellHeight = cell.SizeThatFits(availableCellSize).Height;
+                    if (cellHeight > maxHeight)
+                        maxHeight = (int)cellHeight;
+                }
+//                var maxHeight = row.Select((x, index) => (nint)x.SizeThatFits().Height).Max();
                 result[i] = maxHeight;
             }
             return result;
