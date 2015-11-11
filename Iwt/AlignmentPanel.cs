@@ -7,7 +7,7 @@ namespace Iwt
     public enum Alignment
     {
         TopLeft, Top, TopRight, Left, Center, Right, BottomLeft, Bottom, BottomRight,
-        TopLeftFill, LeftFill, BottomLeftFill
+        TopLeftFill, LeftFill, BottomLeftFill, TopRightFill, RightFill, BottomRightFill
     }
 
     /// <summary>
@@ -28,6 +28,9 @@ namespace Iwt
     /// TopLeftFill
     /// LeftFill
     /// BottomLeftFill
+    /// TopRightFill
+    /// RightFill
+    /// BottomRightFill
     /// 
     /// These are similar to TopLeft, Left, and Bottom respectively, but the width component is filled in by the available
     /// space.
@@ -156,6 +159,9 @@ namespace Iwt
                 case Alignment.TopLeftFill:
                 case Alignment.LeftFill:
                 case Alignment.BottomLeftFill:
+                case Alignment.TopRightFill:
+                case Alignment.RightFill:
+                case Alignment.BottomRightFill:
                     width = clientFrame.Width;
                     break;
             }
