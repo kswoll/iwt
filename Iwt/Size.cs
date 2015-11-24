@@ -7,12 +7,6 @@ namespace Iwt
         public nfloat Width { get; private set; }
         public nfloat Height { get; private set; }
 
-        public Size()
-        {
-            Width = 0;
-            Height = 0;
-        }
-
         public Size(nfloat width, nfloat height) : this()
         {
             Width = width;

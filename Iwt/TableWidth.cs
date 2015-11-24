@@ -7,12 +7,6 @@ namespace Iwt
         public TableWidthStyle Style { get; private set; }
         public int Value { get; private set; }
 
-        public TableWidth()
-        {
-            Style = TableWidthStyle.Fixed;
-            Value = 0;
-        }
-
         private TableWidth(TableWidthStyle style, int value) : this()
         {
             Style = style;
