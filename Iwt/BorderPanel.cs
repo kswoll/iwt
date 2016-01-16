@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using UIKit;
 using CoreGraphics;
+using System.Linq;
 
 namespace Iwt
 {
@@ -97,7 +98,7 @@ namespace Iwt
             return view;
         }
 
-        public BorderPanel(UIView center = null, UIView top = null, UIView bottom = null, UIView right = null, UIView left = null, params Style[] styles) : base(styles)
+        public BorderPanel(UIView center = null, UIView top = null, UIView bottom = null, UIView right = null, UIView left = null, params Style[] styles) : this(styles)
 		{
 			if (center != null)
 				AddSubview(center, BorderConstraint.Center);
@@ -179,11 +180,13 @@ namespace Iwt
 					height -= Spacing.Top;
 				}
 				top.Frame = new CGRect(clientFrame.Left, clientFrame.Top, clientFrame.Width, sizes.NorthSize.Height);
+                top.SetNeedsLayout();
 			}
 			if (bottom != null) 
 			{
 				height -= sizes.SouthSize.Height;
                 bottom.Frame = new CGRect(clientFrame.Left, clientFrame.Top + clientFrame.Height - sizes.SouthSize.Height, clientFrame.Width, sizes.SouthSize.Height);
+                bottom.SetNeedsLayout();
 				if (center != null) 
 				{
 					height -= Spacing.Bottom;
@@ -194,6 +197,7 @@ namespace Iwt
 				width -= sizes.WestSize.Width;
 				centerLeft += sizes.WestSize.Width;
                 left.Frame = new CGRect(clientFrame.Left, centerTop, sizes.WestSize.Width, height);
+                left.SetNeedsLayout();
 				if (center != null)
 				{
 					centerLeft += Spacing.Left;
@@ -204,6 +208,7 @@ namespace Iwt
 			{
 				width -= sizes.EastSize.Width;
                 right.Frame = new CGRect(clientFrame.Left + clientFrame.Width - sizes.EastSize.Width, centerTop, sizes.EastSize.Width, height);
+                right.SetNeedsLayout();
 				if (center != null)
 				{
 					width -= Spacing.Right;
@@ -212,7 +217,7 @@ namespace Iwt
 			if (center != null)
 			{
                 center.Frame = new CGRect(centerLeft, centerTop, width, height);
-//                center.SetNeedsLayout();
+                center.SetNeedsLayout();
 			}
             if (SeparatorColor != UIColor.Clear)
             {
