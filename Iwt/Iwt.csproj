@@ -48,7 +48,6 @@
     <Compile Include="FixedPanel.cs" />
     <Compile Include="HorizontalFlowPanel.cs" />
     <Compile Include="HorizontalRule.cs" />
-    <Compile Include="IStylableControl.cs" />
     <Compile Include="Panel.cs" />
     <Compile Include="Size.cs" />
     <Compile Include="Spacing.cs" />
@@ -59,6 +58,8 @@
     <Compile Include="VerticalRule.cs" />
     <Compile Include="Style.cs" />
     <Compile Include="DefaultStyles.cs" />
+    <Compile Include="StylableLabel.cs" />
+    <Compile Include="IStyleSubscriber.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

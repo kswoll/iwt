@@ -3,7 +3,7 @@ using UIKit;
 
 namespace Iwt
 {
-    public interface IStylableControl
+    public interface IStyleSubscriber
     {
         UIFont Font { set; }
         Spacing Padding { set; }

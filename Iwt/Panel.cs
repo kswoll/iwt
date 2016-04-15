@@ -5,7 +5,7 @@ using CoreGraphics;
 
 namespace Iwt
 {
-	public abstract class Panel : UIView, IStylableControl
+	public abstract class Panel : UIView, IStyleSubscriber
 	{
 		protected abstract void LayoutPanel(CGRect clientFrame);
 		protected abstract CGSize CalculatePreferredSize(CGSize availableSpace);
@@ -17,7 +17,7 @@ namespace Iwt
             Style.ApplyStyles(this, styles);
 		}
 
-        UIFont IStylableControl.Font { set {} }
+        UIFont IStyleSubscriber.Font { set {} }
 
 		public override CGSize SizeThatFits(CGSize size)
 		{

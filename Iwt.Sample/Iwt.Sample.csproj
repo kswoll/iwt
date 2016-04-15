@@ -93,4 +93,10 @@
     <Compile Include="AppDelegate.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\Iwt\Iwt.csproj">
+      <Project>{E59E9510-DFEA-4F59-AC02-5364527F231B}</Project>
+      <Name>Iwt</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

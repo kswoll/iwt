@@ -10,7 +10,14 @@ namespace Iwt.Sample
 
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
-            
+            Window = new UIWindow(UIScreen.MainScreen.Bounds);
+
+            var viewController = new UIViewController();
+            viewController.View = AlignmentPanel.Center(new UILabel { Text = "Foo" });
+            viewController.View.BackgroundColor = UIColor.White;
+
+            Window.RootViewController = viewController;
+            Window.MakeKeyAndVisible();
 
             return true;
         }
